@@ -102,8 +102,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Caesier.resx">
+      <DependentUpon>Caesier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hill.resx">
+      <DependentUpon>Hill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mono1.resx">
       <DependentUpon>Mono1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mono2.resx">
+      <DependentUpon>Mono2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Playfair1.resx">
+      <DependentUpon>Playfair1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Playfair2.resx">
+      <DependentUpon>Playfair2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Polyalphabetic1.resx">
+      <DependentUpon>Polyalphabetic1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Polyalphabetic2.resx">
       <DependentUpon>Polyalphabetic2.cs</DependentUpon>
@@ -117,6 +135,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RootForm.resx">
+      <DependentUpon>RootForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
