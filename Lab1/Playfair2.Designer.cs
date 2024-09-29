@@ -37,7 +37,7 @@
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "Playfair2";
-            this.Text = "Playfair2";
+            this.Text = "Playfair Cipher 2";
             this.ResumeLayout(false);
 
         }

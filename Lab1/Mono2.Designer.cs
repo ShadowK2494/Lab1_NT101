@@ -37,7 +37,7 @@
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "Mono2";
-            this.Text = "Mono2";
+            this.Text = "Mono-alphabetic substitution cipher and frequency analysis 2";
             this.ResumeLayout(false);
 
         }
