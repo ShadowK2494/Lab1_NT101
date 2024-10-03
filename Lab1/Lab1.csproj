@@ -52,11 +52,11 @@
     <Compile Include="Caesier.Designer.cs">
       <DependentUpon>Caesier.cs</DependentUpon>
     </Compile>
-    <Compile Include="Hill.cs">
+    <Compile Include="Affine.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hill.Designer.cs">
-      <DependentUpon>Hill.cs</DependentUpon>
+    <Compile Include="Affine.Designer.cs">
+      <DependentUpon>Affine.cs</DependentUpon>
     </Compile>
     <Compile Include="Mono1.cs">
       <SubType>Form</SubType>
@@ -105,8 +105,8 @@
     <EmbeddedResource Include="Caesier.resx">
       <DependentUpon>Caesier.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Hill.resx">
-      <DependentUpon>Hill.cs</DependentUpon>
+    <EmbeddedResource Include="Affine.resx">
+      <DependentUpon>Affine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mono1.resx">
       <DependentUpon>Mono1.cs</DependentUpon>
@@ -134,6 +134,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="RootForm.resx">
       <DependentUpon>RootForm.cs</DependentUpon>
@@ -150,6 +151,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caesar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Affine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\muitenphai.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\muitentrai.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\muitenlen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\muitenxuong.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
