@@ -28,13 +28,24 @@ namespace Lab1
             foreach (char c in normalizedText)
             {
                 UnicodeCategory uc = CharUnicodeInfo.GetUnicodeCategory(c);
+
+                // Loại bỏ các ký tự dấu
                 if (uc != UnicodeCategory.NonSpacingMark)
                 {
-                    sb.Append(c);
+                    // Quy tắc đặc biệt cho ký tự 'đ' và 'Đ'
+                    if (c == 'đ' || c == 'Đ')
+                    {
+                        sb.Append('d');
+                    }
+                    else
+                    {
+                        sb.Append(c);
+                    }
                 }
             }
             return sb.ToString().Normalize(NormalizationForm.FormC);
         }
+
 
         private void btnClear_Click(object sender, EventArgs e)
         {
