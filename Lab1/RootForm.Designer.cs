@@ -105,7 +105,7 @@
             this.Hill.Name = "Hill";
             this.Hill.Size = new System.Drawing.Size(255, 80);
             this.Hill.TabIndex = 7;
-            this.Hill.Text = "Hill";
+            this.Hill.Text = "Affine cipher";
             this.Hill.UseVisualStyleBackColor = false;
             this.Hill.Click += new System.EventHandler(this.Hill_Click);
             // 

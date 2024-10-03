@@ -49,7 +49,7 @@ namespace Lab1
 
         private void Hill_Click(object sender, EventArgs e)
         {
-            Hill hill = new Hill();
+            Affine hill = new Affine();
             hill.ShowDialog();
         }
 
