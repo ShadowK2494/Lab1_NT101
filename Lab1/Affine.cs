@@ -76,10 +76,20 @@ namespace Lab1
                 char letter = plaintext[i];
                 if (char.IsLetter(letter))
                 {
-                    letter = char.ToUpper(letter);
-                    int x = letter - 'A'; 
-                    int y = (a * x + b) % 26; // Mã hóa (a*x + b) mod 26
-                    buffer[i] = (char)(y + 'A'); 
+                    if (char.IsUpper(letter))
+                    {
+                        // Mã hóa chữ hoa
+                        int x = letter - 'A';
+                        int y = (a * x + b) % 26; // Mã hóa (a*x + b) mod 26
+                        buffer[i] = (char)(y + 'A');
+                    }
+                    else if (char.IsLower(letter))
+                    {
+                        // Mã hóa chữ thường
+                        int x = letter - 'a';
+                        int y = (a * x + b) % 26; // Mã hóa (a*x + b) mod 26
+                        buffer[i] = (char)(y + 'a');
+                    }
                 }
                 else
                 {
@@ -89,17 +99,17 @@ namespace Lab1
             return new string(buffer);
         }
 
+
         //Xử lý sự kiện nhấn nút Mã hóa
         private void btnMahoa_Click(object sender, EventArgs e)
         {
             pbCode.Visible = true;
             pbDecode.Visible = false;
-
             int a,b;
 
             if (int.TryParse(tbA.Text, out a) &&  int.TryParse(tbB.Text, out b))
             {
-                if (!tbPlaintext.Text.All(c => char.IsLetter(c) || char.IsWhiteSpace(c)))
+                if (!tbPlaintext.Text.All(c => char.IsLetter(c) || char.IsWhiteSpace(c) || char.IsPunctuation(c)))
                 {
                     tbPlaintext.Text = null;
                     tbCiphertext.Text = null;
@@ -138,25 +148,29 @@ namespace Lab1
                 char letter = ciphertext[i];
                 if (char.IsLetter(letter))
                 {
-                    letter = char.ToUpper(letter);
-                    int y = letter - 'A';
-                    int x = (aInverse * ((y - b + 26) % 26)) % 26; // Giải mã (y - b + 26) * a^-1 mod 26
-
-                    // Điều chỉnh để kết quả nằm trong khoảng từ 0 đến 25
-                    if (x < 0)
+                    if (char.IsUpper(letter))
                     {
-                        x += 26;
+                        // Giải mã chữ hoa
+                        int y = letter - 'A';
+                        int x = (aInverse * ((y - b + 26) % 26)) % 26; // Giải mã (y - b + 26) * a^-1 mod 26
+                        buffer[i] = (char)(x + 'A');
                     }
-
-                    buffer[i] = (char)(x + 'A'); 
+                    else if (char.IsLower(letter))
+                    {
+                        // Giải mã chữ thường
+                        int y = letter - 'a';
+                        int x = (aInverse * ((y - b + 26) % 26)) % 26; // Giải mã (y - b + 26) * a^-1 mod 26
+                        buffer[i] = (char)(x + 'a');
+                    }
                 }
                 else
                 {
-                    buffer[i] = letter;
+                    buffer[i] = letter; // Giữ nguyên các ký tự không phải chữ cái
                 }
             }
             return new string(buffer);
         }
+
 
         //Xử lý sự kiện nhấn nút Giải mã
         private void btnGiaima_Click(object sender, EventArgs e)
@@ -167,7 +181,7 @@ namespace Lab1
 
             if (int.TryParse(tbA.Text, out a) &&  int.TryParse(tbB.Text, out b) && (ModInverse(a) != -1))
             {
-                if (!tbCiphertext.Text.All(c => char.IsLetter(c) || char.IsWhiteSpace(c)))
+                if (!tbCiphertext.Text.All(c => char.IsLetter(c) || char.IsWhiteSpace(c) || char.IsPunctuation(c)))
                 {
                     tbPlaintext.Text = null;
                     tbCiphertext.Text = null;

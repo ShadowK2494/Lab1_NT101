@@ -107,6 +107,7 @@
             this.tbCiphertext.Location = new System.Drawing.Point(401, 185);
             this.tbCiphertext.Multiline = true;
             this.tbCiphertext.Name = "tbCiphertext";
+            this.tbCiphertext.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbCiphertext.Size = new System.Drawing.Size(274, 419);
             this.tbCiphertext.TabIndex = 15;
             // 
@@ -125,6 +126,7 @@
             this.tbPlaintext.Location = new System.Drawing.Point(37, 185);
             this.tbPlaintext.Multiline = true;
             this.tbPlaintext.Name = "tbPlaintext";
+            this.tbPlaintext.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbPlaintext.Size = new System.Drawing.Size(274, 419);
             this.tbPlaintext.TabIndex = 13;
             // 

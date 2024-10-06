@@ -50,22 +50,35 @@ namespace Lab1
 
 
         // Hàm mã hóa Caesar
-        private string CaesarEncrypt(string input, int shift)
+        private string CaesarEncrypt(string input, int key)
         {
-            char[] buffer = new char[input.Length]; 
+            // Chuẩn hóa giá trị key trong khoảng [0, 25]
+            key = (key % 26 + 26) % 26;
+
+            char[] buffer = new char[input.Length];
             for (int i = 0; i < input.Length; i++)
             {
                 char letter = input[i];
-                //Chỉ mã hóa ký tự, gữ nguyên dấu cách
+
                 if (char.IsLetter(letter))
                 {
-                    letter = char.ToUpper(letter);
-                    letter = (char)((letter + shift - 'A') % 26 + 'A');
+                    if (char.IsUpper(letter))
+                    {
+                        // Mã hóa chữ hoa
+                        letter = (char)((((letter - 'A') + key) % 26) + 'A');
+                    }
+                    else if (char.IsLower(letter))
+                    {
+                        // Mã hóa chữ thường
+                        letter = (char)((((letter - 'a') + key) % 26) + 'a');
+                    }
                 }
+
                 buffer[i] = letter;
             }
-            return new string(buffer);    
+            return new string(buffer);
         }
+
 
         //Xử lý sự kiện nhấn nút Mã hóa
         private void btnMahoa_Click(object sender, EventArgs e)
@@ -73,11 +86,11 @@ namespace Lab1
             pbCode.Visible = true;
             pbDecode.Visible = false;
 
-            int shift;
+            int key;
 
-            if (int.TryParse(tbKey.Text, out shift))
+            if (int.TryParse(tbKey.Text, out key))
             {
-                if (!tbPlaintext.Text.All(c => char.IsLetter(c) || char.IsWhiteSpace(c)))
+                if (!tbPlaintext.Text.All(c => char.IsLetter(c) || char.IsWhiteSpace(c) || char.IsPunctuation(c)))
                 {
                     tbPlaintext.Text = null;
                     tbCiphertext.Text = null;
@@ -86,7 +99,7 @@ namespace Lab1
                 }
                 else
                 {
-                    tbCiphertext.Text = CaesarEncrypt(RemoveDiacritics(tbPlaintext.Text), shift);
+                    tbCiphertext.Text = CaesarEncrypt(RemoveDiacritics(tbPlaintext.Text), key);
                 }
             }
             else
@@ -98,37 +111,43 @@ namespace Lab1
         }
 
         //Hàm giải mã Caesar
-        private string CaesarDecrypt(string input, int shift)
+        private string CaesarDecrypt(string input, int key)
         {
-            // Chuẩn hóa giá trị shift trong khoảng [0, 25]
-            shift = (shift % 26 + 26) % 26;
+            // Chuẩn hóa giá trị key trong khoảng [0, 25]
+            key = (key % 26 + 26) % 26;
 
             char[] buffer = new char[input.Length];
             for (int i = 0; i < input.Length; i++)
             {
                 char letter = input[i];
 
-                // Chỉ giải mã ký tự chữ cái, giữ nguyên dấu cách
                 if (char.IsLetter(letter))
                 {
-                    letter = char.ToUpper(letter);
-                    letter = (char)((((letter - 'A') - shift + 26) % 26) + 'A');
+                    if (char.IsUpper(letter))
+                    {
+                        letter = (char)((((letter - 'A') - key + 26) % 26) + 'A');
+                    }
+                    else if (char.IsLower(letter))
+                    {
+                        letter = (char)((((letter - 'a') - key + 26) % 26) + 'a');
+                    }
                 }
                 buffer[i] = letter;
             }
-            return new string(buffer); 
+            return new string(buffer);
         }
+
 
         //Sự kiện nhấn nút Giải mã
         private void btnGiaima_Click(object sender, EventArgs e)
         {
             pbDecode.Visible = true;
             pbCode.Visible = false;
-            int shift;
+            int key;
 
-            if (int.TryParse(tbKey.Text, out shift))
+            if (int.TryParse(tbKey.Text, out key))
             {
-                if (!tbCiphertext.Text.All(c => char.IsLetter(c) || char.IsWhiteSpace(c)))
+                if (!tbCiphertext.Text.All(c => char.IsLetter(c) || char.IsWhiteSpace(c) || char.IsPunctuation(c)))
                 {
                     tbPlaintext.Text = null;
                     tbCiphertext.Text = null;
@@ -137,7 +156,7 @@ namespace Lab1
                 }
                 else
                 {
-                    tbPlaintext.Text = CaesarDecrypt(tbCiphertext.Text, shift);
+                    tbPlaintext.Text = CaesarDecrypt(tbCiphertext.Text, key);
                 }
             }
             else
