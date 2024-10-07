@@ -41,7 +41,7 @@ namespace Lab1
             caesier.ShowDialog();
         }
 
-        private void Affine_Click (object sender, EventArgs e)
+        private void Affine_Click(object sender, EventArgs e)
         {
             Affine affine = new Affine();
             affine.ShowDialog();
