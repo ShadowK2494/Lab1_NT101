@@ -35,19 +35,13 @@ namespace Lab1
             playfair1.ShowDialog();
         }
 
-        private void Playfair2_Click(object sender, EventArgs e)
-        {
-            Playfair2 playfair2 = new Playfair2();
-            playfair2.ShowDialog();
-        }
-
         private void Caesier_Click(object sender, EventArgs e)
         {
             Caesier caesier = new Caesier();
             caesier.ShowDialog();
         }
 
-        private void Hill_Click(object sender, EventArgs e)
+        private void Affine_Click(object sender, EventArgs e)
         {
             Affine hill = new Affine();
             hill.ShowDialog();
