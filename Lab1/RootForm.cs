@@ -43,8 +43,8 @@ namespace Lab1
 
         private void Affine_Click(object sender, EventArgs e)
         {
-            Affine hill = new Affine();
-            hill.ShowDialog();
+            Affine affine = new Affine();
+            affine.ShowDialog();
         }
 
         private void Polyalphabetic1_Click(object sender, EventArgs e)
