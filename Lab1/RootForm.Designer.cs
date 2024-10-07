@@ -31,8 +31,7 @@
             this.Mono1 = new System.Windows.Forms.Button();
             this.Mono2 = new System.Windows.Forms.Button();
             this.Playfair1 = new System.Windows.Forms.Button();
-            this.Playfair2 = new System.Windows.Forms.Button();
-            this.Hill = new System.Windows.Forms.Button();
+            this.Affine = new System.Windows.Forms.Button();
             this.Caesier = new System.Windows.Forms.Button();
             this.Polyalphabetic2 = new System.Windows.Forms.Button();
             this.Polyalphabetic1 = new System.Windows.Forms.Button();
@@ -81,33 +80,19 @@
             this.Playfair1.UseVisualStyleBackColor = false;
             this.Playfair1.Click += new System.EventHandler(this.Playfair1_Click);
             // 
-            // Playfair2
+            // Affine
             // 
-            this.Playfair2.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.Playfair2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Playfair2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Playfair2.Location = new System.Drawing.Point(290, 492);
-            this.Playfair2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Playfair2.Name = "Playfair2";
-            this.Playfair2.Size = new System.Drawing.Size(255, 80);
-            this.Playfair2.TabIndex = 3;
-            this.Playfair2.Text = "Playfair 2";
-            this.Playfair2.UseVisualStyleBackColor = false;
-            this.Playfair2.Click += new System.EventHandler(this.Playfair2_Click);
-            // 
-            // Hill
-            // 
-            this.Hill.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.Hill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Hill.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Hill.Location = new System.Drawing.Point(640, 314);
-            this.Hill.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Hill.Name = "Hill";
-            this.Hill.Size = new System.Drawing.Size(255, 80);
-            this.Hill.TabIndex = 7;
-            this.Hill.Text = "Affine cipher";
-            this.Hill.UseVisualStyleBackColor = false;
-            this.Hill.Click += new System.EventHandler(this.Hill_Click);
+            this.Affine.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.Affine.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Affine.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Affine.Location = new System.Drawing.Point(640, 314);
+            this.Affine.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Affine.Name = "Affine";
+            this.Affine.Size = new System.Drawing.Size(255, 80);
+            this.Affine.TabIndex = 7;
+            this.Affine.Text = "Affine cipher";
+            this.Affine.UseVisualStyleBackColor = false;
+            this.Affine.Click += new System.EventHandler(this.Affine_Click);
             // 
             // Caesier
             // 
@@ -169,11 +154,10 @@
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(1200, 692);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Hill);
+            this.Controls.Add(this.Affine);
             this.Controls.Add(this.Caesier);
             this.Controls.Add(this.Polyalphabetic2);
             this.Controls.Add(this.Polyalphabetic1);
-            this.Controls.Add(this.Playfair2);
             this.Controls.Add(this.Playfair1);
             this.Controls.Add(this.Mono2);
             this.Controls.Add(this.Mono1);
@@ -190,8 +174,7 @@
         private System.Windows.Forms.Button Mono1;
         private System.Windows.Forms.Button Mono2;
         private System.Windows.Forms.Button Playfair1;
-        private System.Windows.Forms.Button Playfair2;
-        private System.Windows.Forms.Button Hill;
+        private System.Windows.Forms.Button Affine;
         private System.Windows.Forms.Button Caesier;
         private System.Windows.Forms.Button Polyalphabetic2;
         private System.Windows.Forms.Button Polyalphabetic1;
