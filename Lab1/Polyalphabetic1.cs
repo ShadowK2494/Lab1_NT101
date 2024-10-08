@@ -47,16 +47,17 @@ namespace Lab1
         public static string Encrypt(string plainText, string key)
         {
             string encryptedText = "";
-            key = key.ToUpper();
+            key = key.ToUpper(); 
             int keyLength = key.Length;
 
             for (int i = 0, j = 0; i < plainText.Length; i++)
             {
                 char c = plainText[i];
-                if (char.IsLetter(c))
+                if (char.IsLetter(c)) 
                 {
-                    char offset = char.IsUpper(c) ? 'A' : 'a';
-                    encryptedText += (char)(((c + key[j % keyLength] - 2 * offset) % 26) + offset);
+                    char offset = char.IsUpper(c) ? 'A' : 'a'; 
+                                                               
+                    encryptedText += (char)(((c + key[j % keyLength] - offset - 'A') % 26) + offset);
                     j++;
                 }
             }
@@ -67,16 +68,17 @@ namespace Lab1
         public static string Decrypt(string cipherText, string key)
         {
             string decryptedText = "";
-            key = key.ToUpper();
+            key = key.ToUpper(); // Chuyển khóa thành chữ hoa
             int keyLength = key.Length;
 
             for (int i = 0, j = 0; i < cipherText.Length; i++)
             {
                 char c = cipherText[i];
-                if (char.IsLetter(c))
+                if (char.IsLetter(c)) // Chỉ giải mã ký tự là chữ cái
                 {
-                    char offset = char.IsUpper(c) ? 'A' : 'a';
-                    decryptedText += (char)(((c - key[j % keyLength] + 26) % 26) + offset);
+                    char offset = char.IsUpper(c) ? 'A' : 'a'; // Lấy offset cho chữ hoa hoặc chữ thường
+                                                               // Giải mã ký tự
+                    decryptedText += (char)(((c - offset - (key[j % keyLength] - 'A') + 26) % 26) + offset);
                     j++;
                 }
             }
@@ -87,22 +89,26 @@ namespace Lab1
         {
             int code = Convert.ToInt32(e.KeyChar);
 
-            if ((code >64 && code < 91) || code==8 )
+            if ((code > 64 && code < 91) || code == 8)
             {
                 e.Handled = false;
             }
-            else e.Handled = true;
+            else
+            {
+                MessageBox.Show("Vui lòng nhập chỉ chữ cái (A-Z) cho khóa.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.Handled = true; 
+            }
         }
 
         private void Inputtxt_KeyPress(object sender, KeyPressEventArgs e)
         {
-            int code = Convert.ToInt32(e.KeyChar);
+           /* int code = Convert.ToInt32(e.KeyChar);
 
             if ((code > 64 && code < 91) || code == 8)
             {
                 e.Handled = false;
             }
-            else e.Handled = true;
+            else e.Handled = true;*/
         }
     }
 }
