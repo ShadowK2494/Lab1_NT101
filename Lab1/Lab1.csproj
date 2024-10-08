@@ -76,12 +76,6 @@
     <Compile Include="Playfair1.Designer.cs">
       <DependentUpon>Playfair1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Playfair2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Playfair2.Designer.cs">
-      <DependentUpon>Playfair2.cs</DependentUpon>
-    </Compile>
     <Compile Include="Polyalphabetic1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,9 +110,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Playfair1.resx">
       <DependentUpon>Playfair1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Playfair2.resx">
-      <DependentUpon>Playfair2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Polyalphabetic1.resx">
       <DependentUpon>Polyalphabetic1.cs</DependentUpon>
