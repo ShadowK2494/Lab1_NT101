@@ -38,6 +38,10 @@
             this.Encrypt = new System.Windows.Forms.Button();
             this.textOutput = new System.Windows.Forms.TextBox();
             this.Decrypt = new System.Windows.Forms.Button();
+            this.textMatrix = new System.Windows.Forms.TextBox();
+            this.buttonEncrypt = new System.Windows.Forms.Button();
+            this.textOutput = new System.Windows.Forms.TextBox();
+            this.buttonDecrypt = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -107,6 +111,7 @@
             this.textMatrix.TabIndex = 7;
             // 
             // Encrypt
+            // buttonEncrypt
             // 
             this.Encrypt.Location = new System.Drawing.Point(405, 172);
             this.Encrypt.Name = "Encrypt";
@@ -115,6 +120,13 @@
             this.Encrypt.Text = "Encrypt";
             this.Encrypt.UseVisualStyleBackColor = true;
             this.Encrypt.Click += new System.EventHandler(this.button1_Click);
+            this.buttonEncrypt.Location = new System.Drawing.Point(405, 172);
+            this.buttonEncrypt.Name = "buttonEncrypt";
+            this.buttonEncrypt.Size = new System.Drawing.Size(130, 23);
+            this.buttonEncrypt.TabIndex = 8;
+            this.buttonEncrypt.Text = "Encrypt";
+            this.buttonEncrypt.UseVisualStyleBackColor = true;
+            this.buttonEncrypt.Click += new System.EventHandler(this.button1_Click);
             // 
             // textOutput
             // 
@@ -125,8 +137,15 @@
             this.textOutput.Size = new System.Drawing.Size(409, 128);
             this.textOutput.TabIndex = 9;
             this.textOutput.TextChanged += new System.EventHandler(this.textOutput_TextChanged);
+            this.textOutput.Location = new System.Drawing.Point(126, 271);
+            this.textOutput.Multiline = true;
+            this.textOutput.Name = "textOutput";
+            this.textOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textOutput.Size = new System.Drawing.Size(409, 128);
+            this.textOutput.TabIndex = 9;
             // 
             // Decrypt
+            // buttonDecrypt
             // 
             this.Decrypt.Location = new System.Drawing.Point(405, 201);
             this.Decrypt.Name = "Decrypt";
@@ -135,6 +154,13 @@
             this.Decrypt.Text = "Decrypt";
             this.Decrypt.UseVisualStyleBackColor = true;
             this.Decrypt.Click += new System.EventHandler(this.button2_Click);
+            this.buttonDecrypt.Location = new System.Drawing.Point(405, 201);
+            this.buttonDecrypt.Name = "buttonDecrypt";
+            this.buttonDecrypt.Size = new System.Drawing.Size(130, 23);
+            this.buttonDecrypt.TabIndex = 10;
+            this.buttonDecrypt.Text = "Decrypt";
+            this.buttonDecrypt.UseVisualStyleBackColor = true;
+            this.buttonDecrypt.Click += new System.EventHandler(this.button2_Click);
             // 
             // label5
             // 
@@ -156,6 +182,10 @@
             this.Controls.Add(this.Decrypt);
             this.Controls.Add(this.textOutput);
             this.Controls.Add(this.Encrypt);
+            this.Controls.Add(this.textMatrix);
+            this.Controls.Add(this.buttonDecrypt);
+            this.Controls.Add(this.textOutput);
+            this.Controls.Add(this.buttonEncrypt);
             this.Controls.Add(this.textMatrix);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textKey);
@@ -183,6 +213,10 @@
         private System.Windows.Forms.Button Encrypt;
         private System.Windows.Forms.TextBox textOutput;
         private System.Windows.Forms.Button Decrypt;
+        private System.Windows.Forms.TextBox textMatrix;
+        private System.Windows.Forms.Button buttonEncrypt;
+        private System.Windows.Forms.TextBox textOutput;
+        private System.Windows.Forms.Button buttonDecrypt;
         private System.Windows.Forms.Label label5;
     }
 }
