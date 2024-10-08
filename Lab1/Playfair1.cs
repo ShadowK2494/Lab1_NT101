@@ -27,66 +27,83 @@ namespace Lab1
         {
             e.KeyChar = char.ToUpper(e.KeyChar);
             // Lưu vị trí con trỏ để khôi phục sau khi thay đổi
-            int cursorPosition = textBox1.SelectionStart;
+            int cursorPosition = textInput.SelectionStart;
 
             // Loại bỏ khoảng trắng
-            textBox1.Text = textBox1.Text.Replace(" ", "").Replace("\n", "");
+            textInput.Text = textInput.Text.Replace(" ", "").Replace("\n", "");
 
             // Khôi phục vị trí con trỏ sau khi loại bỏ khoảng trắng
-            textBox1.SelectionStart = cursorPosition;
+            textInput.SelectionStart = cursorPosition;
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             // Tạm thời vô hiệu hóa sự kiện TextChanged để tránh vòng lặp
-            textBox1.TextChanged -= textBox1_TextChanged;
+            textInput.TextChanged -= textBox1_TextChanged;
 
             // Lưu vị trí con trỏ hiện tại
-            int cursorPosition = textBox1.SelectionStart;
+            int cursorPosition = textInput.SelectionStart;
 
             // Chuyển đổi tất cả các ký tự thành chữ hoa và loại bỏ khoảng trắng, ký tự xuống dòng
-            string newText = textBox1.Text.Replace(" ", "").Replace("\n", "").Replace("\r", "").ToUpper();
+            string newText = textInput.Text.Replace(" ", "").Replace("\n", "").Replace("\r", "").ToUpper();
 
-            // Gán chuỗi mới đã chỉnh sửa vào TextBox
-            textBox1.Text = newText;
+            // Tạo một chuỗi mới để chứa kết quả sau khi xử lý
+            StringBuilder processedText = new StringBuilder();
 
-            // Khôi phục vị trí con trỏ, nếu con trỏ bị vượt quá độ dài chuỗi thì đặt lại cuối chuỗi
-            textBox1.SelectionStart = Math.Min(cursorPosition, newText.Length);
+            for (int i = 0; i < newText.Length; i++)
+            {
+                // Thêm ký tự hiện tại vào chuỗi đã xử lý
+                processedText.Append(newText[i]);
+
+                // Nếu ký tự hiện tại giống ký tự tiếp theo và không phải là ký tự cuối cùng
+                if (i < newText.Length - 1 && newText[i] == newText[i + 1])
+                {
+                    // Chèn ký tự 'X' vào giữa
+                    processedText.Append('X');
+                }
+            }
+
+            // Gán chuỗi đã xử lý vào TextBox
+            textInput.Text = processedText.ToString();
+
+            // Đặt con trỏ ở cuối chuỗi
+            textInput.SelectionStart = textInput.Text.Length;
 
             // Kích hoạt lại sự kiện TextChanged
-            textBox1.TextChanged += textBox1_TextChanged;
+            textInput.TextChanged += textBox1_TextChanged;
         }
+
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.KeyChar = char.ToUpper(e.KeyChar);
             // Lưu vị trí con trỏ để khôi phục sau khi thay đổi
-            int cursorPosition = textBox1.SelectionStart;
+            int cursorPosition = textInput.SelectionStart;
 
             // Loại bỏ khoảng trắng
-            textBox2.Text = textBox2.Text.Replace(" ", "").Replace("\n", "");
+            textKey.Text = textKey.Text.Replace(" ", "").Replace("\n", "");
 
             // Khôi phục vị trí con trỏ sau khi loại bỏ khoảng trắng
-            textBox2.SelectionStart = cursorPosition;
+            textKey.SelectionStart = cursorPosition;
         }
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             // Lưu vị trí con trỏ hiện tại
-            int cursorPosition = textBox2.SelectionStart;
+            int cursorPosition = textKey.SelectionStart;
 
             // Chuyển đổi tất cả các ký tự thành chữ hoa và loại bỏ khoảng trắng
-            string newText = textBox2.Text.Replace(" ", "").ToUpper().Replace("\n", "");
+            string newText = textKey.Text.Replace(" ", "").ToUpper().Replace("\n", "");
 
             // Gán chuỗi mới đã chỉnh sửa vào TextBox
-            textBox2.Text = newText;
+            textKey.Text = newText;
 
             // Khôi phục vị trí con trỏ, nếu con trỏ bị vượt quá độ dài chuỗi thì đặt lại cuối chuỗi
-            textBox2.SelectionStart = Math.Min(cursorPosition, newText.Length);
+            textKey.SelectionStart = Math.Min(cursorPosition, newText.Length);
         }
 
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string key = textBox2.Text;
+            string key = textKey.Text;
             char[,] matrix = new char[5, 5];
             for (int i = 0; i < 5; i++)
             {
@@ -168,11 +185,11 @@ namespace Lab1
             // In ma trận ra TextBox
             PrintMatrixToTextBox(matrix);
 
-            string text = textBox1.Text;
+            string text = textInput.Text;
             string result = "";
             int dodaitext = text.Length;
             if (dodaitext % 2 == 1) text = text + "X";
-            for (int a =0,b =1; a <= dodaitext && b<= dodaitext; a=a+2, b=b+2)
+            for (int a = 0, b = 1; a <= dodaitext && b <= dodaitext; a = a + 2, b = b + 2)
             {
                 int i1 = -1, j1 = -1, i2 = -1, j2 = -1;
                 for (int i = 0; i < 5; i++)
@@ -181,7 +198,7 @@ namespace Lab1
                     {
                         if (matrix[i, j] == text[a])
                         {
-                            i1=i; j1=j;
+                            i1 = i; j1 = j;
                         }
                         if (matrix[i, j] == text[b])
                         {
@@ -221,7 +238,7 @@ namespace Lab1
                     result += matrix[i2, j2];
                 }
             }
-            textBox4.Text = result;
+            textOutput.Text = result;
         }
         private void PrintMatrixToTextBox(char[,] matrix)
         {
@@ -239,12 +256,12 @@ namespace Lab1
             }
 
             // Hiển thị chuỗi trong TextBox
-            textBox3.Text = matrixString;
+            textMatrix.Text = matrixString;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string key = textBox2.Text;
+            string key = textKey.Text;
             char[,] matrix = new char[5, 5];
             for (int i = 0; i < 5; i++)
             {
@@ -326,7 +343,7 @@ namespace Lab1
             // In ma trận ra TextBox
             PrintMatrixToTextBox(matrix);
 
-            string text = textBox1.Text;
+            string text = textInput.Text;
             string result = "";
             int dodaitext = text.Length;
             if (dodaitext % 2 == 1) text = text + "X";
@@ -379,8 +396,13 @@ namespace Lab1
                     result += matrix[i2, j2];
                 }
             }
-            textBox4.Text = result;
+            textOutput.Text = result;
+        }
+
+        private void textOutput_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
-    
+
 }
