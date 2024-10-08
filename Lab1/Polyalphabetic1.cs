@@ -102,13 +102,13 @@ namespace Lab1
 
         private void Inputtxt_KeyPress(object sender, KeyPressEventArgs e)
         {
-           /* int code = Convert.ToInt32(e.KeyChar);
+            int code = Convert.ToInt32(e.KeyChar);
 
-            if ((code > 64 && code < 91) || code == 8)
+            if ((code > 64 && code < 123) || code == 8)
             {
                 e.Handled = false;
             }
-            else e.Handled = true;*/
+            else e.Handled = true;
         }
     }
 }
