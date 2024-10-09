@@ -40,11 +40,5 @@ namespace Lab1
             Polyalphabetic1 polyalphabetic1 = new Polyalphabetic1();
             polyalphabetic1.ShowDialog();
         }
-
-        private void Polyalphabetic2_Click(object sender, EventArgs e)
-        {
-            Polyalphabetic2 polyalphabetic2 = new Polyalphabetic2();
-            polyalphabetic2.ShowDialog();
-        }
     }
 }
