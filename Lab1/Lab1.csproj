@@ -58,18 +58,6 @@
     <Compile Include="Hill.Designer.cs">
       <DependentUpon>Hill.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mono1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Mono1.Designer.cs">
-      <DependentUpon>Mono1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Mono2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Mono2.Designer.cs">
-      <DependentUpon>Mono2.cs</DependentUpon>
-    </Compile>
     <Compile Include="Playfair1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,12 +95,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Hill.resx">
       <DependentUpon>Hill.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Mono1.resx">
-      <DependentUpon>Mono1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Mono2.resx">
-      <DependentUpon>Mono2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Playfair1.resx">
       <DependentUpon>Playfair1.cs</DependentUpon>
