@@ -25,16 +25,25 @@ namespace Lab1
         }
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Chuyển ký tự nhập vào thành chữ hoa
             e.KeyChar = char.ToUpper(e.KeyChar);
+
+            // Nếu người dùng nhập chữ 'J', chuyển thành 'I'
+            if (e.KeyChar == 'J')
+            {
+                e.KeyChar = 'I';
+            }
+
             // Lưu vị trí con trỏ để khôi phục sau khi thay đổi
             int cursorPosition = textInput.SelectionStart;
 
-            // Loại bỏ khoảng trắng
-            textInput.Text = textInput.Text.Replace(" ", "").Replace("\n", "");
+            // Loại bỏ khoảng trắng và ký tự xuống dòng
+            textInput.Text = textInput.Text.Replace(" ", "").Replace("\n", "").Replace("\r", "");
 
             // Khôi phục vị trí con trỏ sau khi loại bỏ khoảng trắng
             textInput.SelectionStart = cursorPosition;
         }
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             // Tạm thời vô hiệu hóa sự kiện TextChanged để tránh vòng lặp
@@ -43,8 +52,8 @@ namespace Lab1
             // Lưu vị trí con trỏ hiện tại
             int cursorPosition = textInput.SelectionStart;
 
-            // Chuyển đổi tất cả các ký tự thành chữ hoa và loại bỏ khoảng trắng, ký tự xuống dòng
-            string newText = textInput.Text.Replace(" ", "").Replace("\n", "").Replace("\r", "").ToUpper();
+            // Chuyển đổi tất cả các ký tự thành chữ hoa, loại bỏ khoảng trắng và chuyển 'J' thành 'I'
+            string newText = textInput.Text.Replace(" ", "").Replace("\n", "").Replace("\r", "").ToUpper().Replace('J', 'I');
 
             // Tạo một chuỗi mới để chứa kết quả sau khi xử lý
             StringBuilder processedText = new StringBuilder();
@@ -70,36 +79,49 @@ namespace Lab1
 
             // Kích hoạt lại sự kiện TextChanged
             textInput.TextChanged += textBox1_TextChanged;
-
         }
 
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Chuyển ký tự nhập vào thành chữ hoa
             e.KeyChar = char.ToUpper(e.KeyChar);
-            // Lưu vị trí con trỏ để khôi phục sau khi thay đổi
-            int cursorPosition = textInput.SelectionStart;
 
-            // Loại bỏ khoảng trắng
-            textKey.Text = textKey.Text.Replace(" ", "").Replace("\n", "");
+            // Nếu người dùng nhập chữ 'J', chuyển thành 'I'
+            if (e.KeyChar == 'J')
+            {
+                e.KeyChar = 'I';
+            }
 
-            // Khôi phục vị trí con trỏ sau khi loại bỏ khoảng trắng
-            textKey.SelectionStart = cursorPosition;
-        }
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
             // Lưu vị trí con trỏ hiện tại
             int cursorPosition = textKey.SelectionStart;
 
-            // Chuyển đổi tất cả các ký tự thành chữ hoa và loại bỏ khoảng trắng
-            string newText = textKey.Text.Replace(" ", "").ToUpper().Replace("\n", "");
+            // Loại bỏ khoảng trắng và ký tự xuống dòng
+            textKey.Text = textKey.Text.Replace(" ", "").Replace("\n", "").Replace("\r", "");
+
+            // Khôi phục vị trí con trỏ, nếu con trỏ bị vượt quá độ dài chuỗi thì đặt lại cuối chuỗi
+            textKey.SelectionStart = Math.Min(cursorPosition, textKey.Text.Length);
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            // Tạm thời vô hiệu hóa sự kiện TextChanged để tránh vòng lặp không mong muốn
+            textKey.TextChanged -= textBox2_TextChanged;
+
+            // Chuyển đổi tất cả các ký tự thành chữ hoa, loại bỏ khoảng trắng và chuyển 'J' thành 'I'
+            string newText = textKey.Text.Replace(" ", "").Replace("\n", "").Replace("\r", "").ToUpper().Replace('J', 'I');
 
             // Gán chuỗi mới đã chỉnh sửa vào TextBox
             textKey.Text = newText;
 
-            // Khôi phục vị trí con trỏ, nếu con trỏ bị vượt quá độ dài chuỗi thì đặt lại cuối chuỗi
-            textKey.SelectionStart = Math.Min(cursorPosition, newText.Length);
+            // Đặt con trỏ ở cuối chuỗi
+            textKey.SelectionStart = textKey.Text.Length;
+
+            // Kích hoạt lại sự kiện TextChanged
+            textKey.TextChanged += textBox2_TextChanged;
         }
+
+
 
 
         private void button1_Click(object sender, EventArgs e)
