@@ -77,29 +77,35 @@ namespace Lab1
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.KeyChar = char.ToUpper(e.KeyChar);
-            // Lưu vị trí con trỏ để khôi phục sau khi thay đổi
-            int cursorPosition = textInput.SelectionStart;
 
-            // Loại bỏ khoảng trắng
-            textKey.Text = textKey.Text.Replace(" ", "").Replace("\n", "");
-
-            // Khôi phục vị trí con trỏ sau khi loại bỏ khoảng trắng
-            textKey.SelectionStart = cursorPosition;
-        }
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
             // Lưu vị trí con trỏ hiện tại
             int cursorPosition = textKey.SelectionStart;
 
+            // Loại bỏ khoảng trắng
+            textKey.Text = textKey.Text.Replace(" ", "").Replace("\n", "").Replace("\r", "");
+
+            // Khôi phục vị trí con trỏ, nếu con trỏ bị vượt quá độ dài chuỗi thì đặt lại cuối chuỗi
+            textKey.SelectionStart = Math.Min(cursorPosition, textKey.Text.Length);
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            // Tạm thời vô hiệu hóa sự kiện TextChanged để tránh vòng lặp không mong muốn
+            textKey.TextChanged -= textBox2_TextChanged;
+
             // Chuyển đổi tất cả các ký tự thành chữ hoa và loại bỏ khoảng trắng
-            string newText = textKey.Text.Replace(" ", "").ToUpper().Replace("\n", "");
+            string newText = textKey.Text.Replace(" ", "").Replace("\n", "").Replace("\r", "").ToUpper();
 
             // Gán chuỗi mới đã chỉnh sửa vào TextBox
             textKey.Text = newText;
 
-            // Khôi phục vị trí con trỏ, nếu con trỏ bị vượt quá độ dài chuỗi thì đặt lại cuối chuỗi
-            textKey.SelectionStart = Math.Min(cursorPosition, newText.Length);
+            // Đặt con trỏ ở cuối chuỗi
+            textKey.SelectionStart = textKey.Text.Length;
+
+            // Kích hoạt lại sự kiện TextChanged
+            textKey.TextChanged += textBox2_TextChanged;
         }
+
 
 
         private void button1_Click(object sender, EventArgs e)
