@@ -31,13 +31,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textInput = new System.Windows.Forms.TextBox();
+            this.textKey = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.textMatrix = new System.Windows.Forms.TextBox();
+            this.buttonEncrypt = new System.Windows.Forms.Button();
+            this.textOutput = new System.Windows.Forms.TextBox();
+            this.buttonDecrypt = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -68,25 +68,25 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Key";
             // 
-            // textBox1
+            // textInput
             // 
-            this.textBox1.Location = new System.Drawing.Point(126, 12);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(409, 128);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textInput.Location = new System.Drawing.Point(126, 12);
+            this.textInput.Multiline = true;
+            this.textInput.Name = "textInput";
+            this.textInput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textInput.Size = new System.Drawing.Size(409, 128);
+            this.textInput.TabIndex = 4;
+            this.textInput.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
-            // textBox2
+            // textKey
             // 
-            this.textBox2.Location = new System.Drawing.Point(126, 146);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(409, 20);
-            this.textBox2.TabIndex = 5;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
+            this.textKey.Location = new System.Drawing.Point(126, 146);
+            this.textKey.Name = "textKey";
+            this.textKey.Size = new System.Drawing.Size(409, 20);
+            this.textKey.TabIndex = 5;
+            this.textKey.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textKey.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // label4
             // 
@@ -98,42 +98,42 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Matrix";
             // 
-            // textBox3
+            // textMatrix
             // 
-            this.textBox3.Location = new System.Drawing.Point(126, 172);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(273, 93);
-            this.textBox3.TabIndex = 7;
+            this.textMatrix.Location = new System.Drawing.Point(126, 172);
+            this.textMatrix.Multiline = true;
+            this.textMatrix.Name = "textMatrix";
+            this.textMatrix.Size = new System.Drawing.Size(273, 93);
+            this.textMatrix.TabIndex = 7;
             // 
-            // button1
+            // buttonEncrypt
             // 
-            this.button1.Location = new System.Drawing.Point(405, 172);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Encrypt";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonEncrypt.Location = new System.Drawing.Point(405, 172);
+            this.buttonEncrypt.Name = "buttonEncrypt";
+            this.buttonEncrypt.Size = new System.Drawing.Size(130, 23);
+            this.buttonEncrypt.TabIndex = 8;
+            this.buttonEncrypt.Text = "Encrypt";
+            this.buttonEncrypt.UseVisualStyleBackColor = true;
+            this.buttonEncrypt.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox4
+            // textOutput
             // 
-            this.textBox4.Location = new System.Drawing.Point(126, 271);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox4.Size = new System.Drawing.Size(409, 128);
-            this.textBox4.TabIndex = 9;
+            this.textOutput.Location = new System.Drawing.Point(126, 271);
+            this.textOutput.Multiline = true;
+            this.textOutput.Name = "textOutput";
+            this.textOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textOutput.Size = new System.Drawing.Size(409, 128);
+            this.textOutput.TabIndex = 9;
             // 
-            // button2
+            // buttonDecrypt
             // 
-            this.button2.Location = new System.Drawing.Point(405, 201);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(130, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Decrypt";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonDecrypt.Location = new System.Drawing.Point(405, 201);
+            this.buttonDecrypt.Name = "buttonDecrypt";
+            this.buttonDecrypt.Size = new System.Drawing.Size(130, 23);
+            this.buttonDecrypt.TabIndex = 10;
+            this.buttonDecrypt.Text = "Decrypt";
+            this.buttonDecrypt.UseVisualStyleBackColor = true;
+            this.buttonDecrypt.Click += new System.EventHandler(this.button2_Click);
             // 
             // label5
             // 
@@ -152,18 +152,18 @@
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(561, 409);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.buttonDecrypt);
+            this.Controls.Add(this.textOutput);
+            this.Controls.Add(this.buttonEncrypt);
+            this.Controls.Add(this.textMatrix);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textKey);
+            this.Controls.Add(this.textInput);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Playfair1";
-            this.Text = "Playfair Cipher 1";
+            this.Text = "Playfair Cipher";
             this.Load += new System.EventHandler(this.Playfair1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -175,13 +175,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textInput;
+        private System.Windows.Forms.TextBox textKey;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textMatrix;
+        private System.Windows.Forms.Button buttonEncrypt;
+        private System.Windows.Forms.TextBox textOutput;
+        private System.Windows.Forms.Button buttonDecrypt;
         private System.Windows.Forms.Label label5;
     }
 }
