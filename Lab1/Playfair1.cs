@@ -70,6 +70,7 @@ namespace Lab1
 
             // Kích hoạt lại sự kiện TextChanged
             textInput.TextChanged += textBox1_TextChanged;
+
         }
 
 
@@ -109,7 +110,7 @@ namespace Lab1
             {
                 for (int j = 0; j < 5; j++)
                 {
-                    matrix[i, j] = '\0'; // Gán ký tự '?' vào từng phần tử
+                    matrix[i, j] = '\0'; 
                 }
             }
             int dodaikey = key.Length;
