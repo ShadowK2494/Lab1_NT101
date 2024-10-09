@@ -76,7 +76,7 @@
             this.Playfair1.Name = "Playfair1";
             this.Playfair1.Size = new System.Drawing.Size(255, 80);
             this.Playfair1.TabIndex = 2;
-            this.Playfair1.Text = "Playfair 1";
+            this.Playfair1.Text = "Playfair";
             this.Playfair1.UseVisualStyleBackColor = false;
             this.Playfair1.Click += new System.EventHandler(this.Playfair1_Click);
             // 
