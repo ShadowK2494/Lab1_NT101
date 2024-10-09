@@ -17,18 +17,6 @@ namespace Lab1
             InitializeComponent();
         }
 
-        private void Mono1_Click(object sender, EventArgs e)
-        {
-            Mono1 mono1 = new Mono1();
-            mono1.ShowDialog();
-        }
-
-        private void Mono2_Click(object sender, EventArgs e)
-        {
-            Mono2 mono2 = new Mono2();
-            mono2.ShowDialog();
-        }
-
         private void Playfair1_Click(object sender, EventArgs e)
         {
             Playfair1 playfair1 = new Playfair1();
