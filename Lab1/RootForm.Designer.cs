@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Mono1 = new System.Windows.Forms.Button();
-            this.Mono2 = new System.Windows.Forms.Button();
             this.Playfair1 = new System.Windows.Forms.Button();
             this.Affine = new System.Windows.Forms.Button();
             this.Caesier = new System.Windows.Forms.Button();
@@ -38,40 +36,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // Mono1
-            // 
-            this.Mono1.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.Mono1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Mono1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Mono1.Location = new System.Drawing.Point(290, 225);
-            this.Mono1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Mono1.Name = "Mono1";
-            this.Mono1.Size = new System.Drawing.Size(255, 80);
-            this.Mono1.TabIndex = 0;
-            this.Mono1.Text = "Mono 1";
-            this.Mono1.UseVisualStyleBackColor = false;
-            this.Mono1.Click += new System.EventHandler(this.Mono1_Click);
-            // 
-            // Mono2
-            // 
-            this.Mono2.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.Mono2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Mono2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Mono2.Location = new System.Drawing.Point(290, 314);
-            this.Mono2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Mono2.Name = "Mono2";
-            this.Mono2.Size = new System.Drawing.Size(255, 80);
-            this.Mono2.TabIndex = 1;
-            this.Mono2.Text = "Mono 2";
-            this.Mono2.UseVisualStyleBackColor = false;
-            this.Mono2.Click += new System.EventHandler(this.Mono2_Click);
-            // 
             // Playfair1
             // 
             this.Playfair1.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.Playfair1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Playfair1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Playfair1.Location = new System.Drawing.Point(290, 403);
+            this.Playfair1.Location = new System.Drawing.Point(290, 358);
             this.Playfair1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Playfair1.Name = "Playfair1";
             this.Playfair1.Size = new System.Drawing.Size(255, 80);
@@ -85,7 +55,7 @@
             this.Affine.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.Affine.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Affine.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Affine.Location = new System.Drawing.Point(640, 314);
+            this.Affine.Location = new System.Drawing.Point(640, 269);
             this.Affine.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Affine.Name = "Affine";
             this.Affine.Size = new System.Drawing.Size(255, 80);
@@ -99,7 +69,7 @@
             this.Caesier.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.Caesier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Caesier.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Caesier.Location = new System.Drawing.Point(640, 225);
+            this.Caesier.Location = new System.Drawing.Point(290, 268);
             this.Caesier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Caesier.Name = "Caesier";
             this.Caesier.Size = new System.Drawing.Size(255, 80);
@@ -113,7 +83,7 @@
             this.Polyalphabetic2.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.Polyalphabetic2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Polyalphabetic2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Polyalphabetic2.Location = new System.Drawing.Point(640, 492);
+            this.Polyalphabetic2.Location = new System.Drawing.Point(640, 447);
             this.Polyalphabetic2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Polyalphabetic2.Name = "Polyalphabetic2";
             this.Polyalphabetic2.Size = new System.Drawing.Size(255, 80);
@@ -127,7 +97,7 @@
             this.Polyalphabetic1.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.Polyalphabetic1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Polyalphabetic1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Polyalphabetic1.Location = new System.Drawing.Point(640, 403);
+            this.Polyalphabetic1.Location = new System.Drawing.Point(640, 358);
             this.Polyalphabetic1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Polyalphabetic1.Name = "Polyalphabetic1";
             this.Polyalphabetic1.Size = new System.Drawing.Size(255, 80);
@@ -159,8 +129,6 @@
             this.Controls.Add(this.Polyalphabetic2);
             this.Controls.Add(this.Polyalphabetic1);
             this.Controls.Add(this.Playfair1);
-            this.Controls.Add(this.Mono2);
-            this.Controls.Add(this.Mono1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "RootForm";
             this.Text = "RootForm";
@@ -170,9 +138,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button Mono1;
-        private System.Windows.Forms.Button Mono2;
         private System.Windows.Forms.Button Playfair1;
         private System.Windows.Forms.Button Affine;
         private System.Windows.Forms.Button Caesier;
