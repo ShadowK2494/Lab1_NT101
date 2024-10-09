@@ -54,6 +54,8 @@ namespace Lab1
 
             // Chuyển đổi tất cả các ký tự thành chữ hoa, loại bỏ khoảng trắng và chuyển 'J' thành 'I'
             string newText = textInput.Text.Replace(" ", "").Replace("\n", "").Replace("\r", "").ToUpper().Replace('J', 'I');
+           
+            newText = string.Concat(newText.Where(c => char.IsLetter(c)));
 
             // Tạo một chuỗi mới để chứa kết quả sau khi xử lý
             StringBuilder processedText = new StringBuilder();
